@@ -20,6 +20,9 @@ csvHandler()
         
         mkdir -p $archivepath
         mv $srcpath/*.tar.gz $archivepath
+    else
+        echo " no files found"
+        exit 1
     fi
  
 }
