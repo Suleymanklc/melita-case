@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-csvHandler()
+function   csvHandler()
 {   
     srcpath=$1
     transferPath="/mnt/transfer"
@@ -27,7 +27,7 @@ csvHandler()
  
 }
 
-checkArgCouunt()
+function checkArgCouunt()
 
 {
     if (( $# == 2 )); then
