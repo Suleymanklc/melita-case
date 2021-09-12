@@ -1,0 +1,22 @@
+#Expose the backend service called new-fiber-service, which is listening on port 80, to
+#The client wants to host other websites using the same ingress in the future, so keep this in
+#mind when designing the ingress.
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: new-fiber-service
+spec:
+  tls:
+  - hosts:
+    - www.melita.com
+  rules:
+  - host: www.melita.com
+    http:
+      paths:
+      - path: /new-fiber-service
+        pathType: Prefix
+        backend:
+          serviceName: new-fiber-service
+          servicePort: 80
+      
+
